@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1>Add your comment please</h1>
+    <section>
+        <h4>your comments</h4>
+        <div id='comment-container'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, a!</p>
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="30" rows="5"></textarea>
+            <button id='submit-comment'>post</button>
+        </div>
+    </section> -->
+    <h2>More events</h2>
+    <section>
+        <h3 id="secret-info">very secret important information</h3>
+        <input id="delete-confirm" type="text" placeholder="please type delete">
+        <button id='delete-btn' disabled>Delete</button>
+    </section>
+
+
+    <script>
+        /* // 1. add button event handler
+        document.getElementById('submit-comment').addEventListener('click', function () {
+            //2. get user comment
+            const commentBox = document.getElementById('new-comment');
+            // const userComment = (commentBox.value);
+            // 3. create comment paragraph
+            const newComment = document.createElement('p');
+            newComment.innerText = commentBox.value;
+            // 4. append the comment
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(newComment);
+            comment
+        }) */
+
+        document.getElementById('delete-btn').addEventListener('click', function () {
+            document.getElementById('secret-info').style.display = 'none';
+        });
+        // focus
+        document.getElementById('delete-confirm').addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'green';
+        });
+        // blur
+        document.getElementById('delete-confirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'seagreen ';
+        });
+        // keydown
+        document.getElementById('delete-confirm').addEventListener('change', function () {
+            const deleteField = document.getElementById('delete-confirm');
+            console.log(deleteField.value);
+        });
+        // keydown
+        document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+            // const deleteField = document.getElementById('delete-confirm');
+            // if (deleteField.value == 'delete') {
+            //     deleteField.removeAttribute('disabled');
+            // }
+            const deletebtn = document.getElementById('delete-btn');
+            if (event.target.value == 'delete') {
+                deletebtn.removeAttribute('disabled');
+            }
+            else {
+                deletebtn.setAttribute('disabled', true);
+            }
+            // console.log(event.target.value);
+        });
+
+    </script>
+</body>
+
+</html>
